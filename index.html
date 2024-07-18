@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <title>To-Do List Extension</title>
+    </head>
+    <body>  
+        <div class="headline">
+            <div id="dayNow"></div>
+            <div id="timeNow"></div>
+        </div>
+        <div class="hero">
+            <div class="button">
+                <div class="add">
+                    <button class="add-button" onclick="showTaskInput()">
+                        <i class="fa-regular fa-plus plus-icon" style="color: #121417;"></i>
+                    </button>
+                    <div id="instruction" onclick="showTaskInput()">Add new task</div>
+                </div>
+                <input type="text" id="taskInput" placeholder="Enter to submit" onkeypress="addTask(event)">
+            </div>
+            <div class="help-button">
+                <button class="how-to"  onclick="showTutorial()">
+                    <i class="fa-solid fa-question question-icon" style="color: #ffffff;"></i>
+                </button>
+            </div>
+        </div>
+        <ul id="taskList"></ul>
+        <div class="trash">
+            <i class="fa-solid fa-trash-can trash-icon" style="color: #121417;"></i>
+        </div>
+        <div id="tutorialOverlay" class="tutor-hidden">
+            <div class="tutorial-content">
+                <h1>Welcome to To-do List</h1>
+                <p>Here's a quick tutorial to get you started</p>
+                <ul>
+                    <li>Click "Add new task" to create task</li>
+                    <li>Drag to reorder the to-do list</li>
+                    <li>Drag to bin to delete a task</li>
+                </ul>
+                <button id="closeTutorial">Got it!</button>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/9fc0634863.js" crossorigin="anonymous"></script>
+    </body>
+</html>
