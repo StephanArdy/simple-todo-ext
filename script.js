@@ -6,12 +6,24 @@ document.addEventListener('DOMContentLoaded', function(){
     setInterval(updateTime, 1000)
 
     const closeTutorialButton = document.getElementById('closeTutorial')
-    console.log("close tutorial button: ", closeTutorialButton)
+    if (closeTutorialButton){
+        closeTutorialButton.addEventListener('click', hideTutorial)
+    }
 
-    closeTutorialButton.addEventListener('click', function(){
-        console.log("close tutorial button clicked")
-        hideTutorial()
-    })
+    const addButton = document.getElementById('addButton')
+    if (addButton){
+        addButton.addEventListener('click', showTaskInput)
+    }
+
+    const howToButton = document.getElementById('howToButton')
+    if (howToButton){
+        howToButton.addEventListener('click', showTutorial)
+    }
+
+    const taskInput = document.getElementById('taskInput')
+    if (taskInput) {
+        taskInput.addEventListener('keypress', addTask)
+    }   
 });
 
 function showTutorial(){
